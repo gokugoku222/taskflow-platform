@@ -1,0 +1,49 @@
+{
+  "name": "taskflow-platform",
+  "version": "1.0.0",
+  "description": "Full-stack task management platform with Next.js, Node.js, TypeScript, and PostgreSQL",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build": "npm run build:backend && npm run build:frontend",
+    "build:backend": "cd backend && npm run build",
+    "build:frontend": "cd frontend && npm run build",
+    "test": "npm run test:backend && npm run test:frontend",
+    "test:backend": "cd backend && npm test",
+    "test:frontend": "cd frontend && npm test",
+    "lint": "npm run lint:backend && npm run lint:frontend",
+    "lint:backend": "cd backend && npm run lint",
+    "lint:frontend": "cd frontend && npm run lint",
+    "docker:up": "docker-compose up --build",
+    "docker:down": "docker-compose down",
+    "setup:db": "cd backend && npm run db:migrate && npm run db:seed"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": [
+    "task-management",
+    "nextjs",
+    "nodejs",
+    "typescript",
+    "postgresql",
+    "docker",
+    "full-stack"
+  ],
+  "author": {
+    "name": "Maria Joao Sarabando",
+    "email": "your.email@example.com",
+    "url": "https://github.com/MJ-Sarabando"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MJ-Sarabando/taskflow-platform.git"
+  }
+}
