@@ -14,7 +14,7 @@ A modern, enterprise-grade task management platform built with **TypeScript**, *
 ![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat&logo=redis&logoColor=white)
 ![Jest](https://img.shields.io/badge/Jest-C21325?style=flat&logo=jest&logoColor=white)
 ![Socket.io](https://img.shields.io/badge/Socket.io-010101?style=flat&logo=socket.io&logoColor=white)
-
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 ## 🎯 Enterprise Overview
 
 TaskFlow is a production-ready, enterprise-grade task management platform designed for modern distributed teams. Built with microservices architecture, comprehensive testing strategies, and DevOps best practices, it demonstrates professional software development practices used by FAANG companies.
