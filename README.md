@@ -759,10 +759,6 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 - **Zustand** - For lightweight state management
 - **Open Source Community** - For all the amazing tools and libraries
 
-## 📈 **Star History**
-
-[![Star History Chart](https://api.star-history.com/svg?repos=MJ-Sarabando/taskflow-platform&type=Date)](https://star-history.com/#MJ-Sarabando/taskflow-platform&Date)
-
 ---
 
 ⭐ **If this enterprise-grade full-stack application interests you, please consider starring the repository!** ⭐
