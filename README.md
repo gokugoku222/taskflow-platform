@@ -746,8 +746,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 ## 🤝 **Community & Support**
 
 - 💬 **Discussion Forum**: GitHub Discussions
-- 📧 **Email Support**: [Contact](mailto:your.email@example.com)
-- 📱 **Twitter**: [@YourTwitter](https://twitter.com/YourTwitter)
+- 📧 **Email Support**: [Contact](mailto:mariajoaosarabando@gmail.com)
 - 💼 **LinkedIn**: [Professional Profile](https://linkedin.com/in/maria-sarabando)
 
 ## 🙏 **Acknowledgments**
